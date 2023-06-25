@@ -23,7 +23,6 @@ public class testButtons {
         driver.findElement(By.xpath("//button[text()='Click Me']")).click();
 
         Assert.assertEquals(driver.findElement(By.cssSelector("#dynamicClickMessage")).getText(), "You have done a dynamic click", "Wrong URL");
-
     }
     @Test
     public void testAdd(){
