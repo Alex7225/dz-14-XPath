@@ -16,13 +16,13 @@ public class testButtons {
         driver.manage().window().maximize();
     }
     @Test
-    public void testPageUI(){
+    public void buttonsTest(){
 
         driver.get("https://demoqa.com/elements");
         driver.findElement(By.xpath("//span[text()='Buttons']")).click();
         driver.findElement(By.xpath("//button[text()='Click Me']")).click();
 
-        Assert.assertEquals(driver.findElement(By.cssSelector("#dynamicClickMessage")).getText(), "You have done a dynamic click", "Wrong URL");
+        Assert.assertEquals(driver.findElement(By.cssSelector("#dynamicClickMessage")).getText(), "You have done a dynamic click", "Didn't find button or something wrong");
     }
     @Test
     public void testAdd(){
@@ -36,12 +36,12 @@ public class testButtons {
         driver.findElement(By.cssSelector("#salary")).sendKeys("2400");
         driver.findElement(By.cssSelector("#department")).sendKeys("Analituk");
         driver.findElement(By.cssSelector("#submit")).click();
-        Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/div[4]/div/div[1]")).getText(), "Alex", "Wrong URL");
+        Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"app\"]/div/div/div[2]/div[2]/div[2]/div[3]/div[1]/div[2]/div[4]/div/div[1]")).getText(), "Alex", "Data didn`t add");
 
         driver.findElement(By.xpath("//*[@id=\"edit-record-4\"]/svg/path")).click();
         driver.findElement(By.cssSelector("#firstName")).sendKeys("Oleg");
         driver.findElement(By.cssSelector("#submit")).click();
-        Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"edit-record-4\"]/svg/path")).getText(), "Oleg", "Wrong URL");
+        Assert.assertEquals(driver.findElement(By.xpath("//*[@id=\"edit-record-4\"]/svg/path")).getText(), "Oleg", "Didn`t edit");
     }
     @AfterMethod
     public void cleanUp(){
